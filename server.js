@@ -8,7 +8,7 @@ const reviewRoutes = require('./routes/reviews');
 const bookingRoutes = require('./routes/bookings');
 const paymentRoutes = require('./routes/payment')
 const app = express();
-const port = process.env.PORT || 5001;
+const port = process.env.PORT ||10000;
 
 // CORS options
 const corsOptions = {
