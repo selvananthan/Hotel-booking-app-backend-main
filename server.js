@@ -29,7 +29,7 @@ app.use('/api/bookings', bookingRoutes);
 app.use('/api/payment/',paymentRoutes)
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://selvagoogly:Mars%401992@cluster0.k3rqn.mongodb.net/hotelbooking?retryWrites=true&w=majority&appName=Cluster0',{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://selvagoogly:Mars%401992@cluster0.k3rqn.mongodb.net/hotelbooking?retryWrites=true&w=majority&appName=Cluster0',{ useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 5000 })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Could not connect to MongoDB', err));
 
