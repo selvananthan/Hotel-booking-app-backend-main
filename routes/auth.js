@@ -25,7 +25,7 @@ router.post('/login', async (req, res) => {
 router.post('/register', async (req, res) => {
   const { username, email, password } = req.body;
 
-  dd(10);
+
   try {
     const user = new User({ username, email, password });
      user.save();
