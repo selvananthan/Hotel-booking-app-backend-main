@@ -23,6 +23,8 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
+  console.log("register entered");
+  
   const { username, password, address, phonenumber, email } = req.body;
   try {
       const dbResponse = await User.create({
