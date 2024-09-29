@@ -7,31 +7,38 @@ const router = express.Router();
 
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
-  
   try {
-    const user = await User.findOne({ username });
-    
-    if (!user || !(await user.comparePassword(password))) {
-      return res.status(400).json({ message: 'Invalid credentials' });
-    }
-  
-    
-    res.json(user)
-  } catch (err) {
-    res.status(500).json({ message: 'Error logging in', error: err.message });
+      const dbResponse = await User.findOne({
+          username,
+          password,
+      });
+      console.log(dbResponse, "dbResponse");
+      if (dbResponse._id) {
+          res.send(username);
+      }
+  } catch (error) {
+      console.log(error);
+      res.send("error");
   }
 });
 
 router.post('/register', async (req, res) => {
-  const { username, email, password } = req.body;
-
-
+  const { username, password, address, phonenumber, email } = req.body;
   try {
-    const user = new User({ username, email, password });
-     user.save();
-    res.status(201).json({ message: 'User registered successfully' });
-  } catch (err) {
-    res.status(400).json({ message: 'Error registering user', error: err.message });
+      const dbResponse = await User.create({
+          username,
+          password,
+          address,
+          phonenumber,
+          email,
+      });
+      console.log(dbResponse, "dbResponse");
+      if (dbResponse._id) {
+          res.send(username);
+      }
+  } catch (error) {
+      console.log(error);
+      res.send("error");
   }
 });
 
