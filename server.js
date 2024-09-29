@@ -29,7 +29,9 @@ app.use('/api/bookings', bookingRoutes);
 app.use('/api/payment/',paymentRoutes)
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://selvagoogly:%3CMars%401992%3E@cluster0.k3rqn.mongodb.net/SiddHotelBooking?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb+srv://Selva:Mars%401992@selva.tvmfr.mongodb.net/HotelBooking')
+// mongoose.connect('mongodb+srv://selvagoogly:%3CMars%401992%3E@cluster0.k3rqn.mongodb.net/SiddHotelBooking?retryWrites=true&w=majority&appName=Cluster0')
+
 // mongoose.connect('mongodb://localhost:27017/SiddHotelBooking',{ useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 5000 ,ssl: false,})
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Could not connect to MongoDB', err));
