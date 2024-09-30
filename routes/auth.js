@@ -2,7 +2,7 @@ const express = require('express');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 
 // const secret = 'your_jwt_secret';  // Replace with your actual JWT secret
