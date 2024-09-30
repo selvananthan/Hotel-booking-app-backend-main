@@ -8,7 +8,7 @@ const reviewRoutes = require('./routes/reviews');
 const bookingRoutes = require('./routes/bookings');
 const paymentRoutes = require('./routes/payment')
 const app = express();
-const port = process.env.PORT ||10000;
+const PORT = process.env.PORT || 10002;
 const dburl = process.env.MONGO_URI;
 
 
@@ -40,7 +40,8 @@ const connectDb = async () => {
   await mongoose.connect('mongodb+srv://Selva:Mars%401992@selva.tvmfr.mongodb.net/HotelBooking');
   console.log(mongoose.connection.readyState, ' Connection State');
 }
-connectDb
+connectDb();
+
 // Connect to MongoDB
 // mongoose.connect(dburl)
 // // mongoose.connect('mongodb+srv://selvagoogly:%3CMars%401992%3E@cluster0.k3rqn.mongodb.net/SiddHotelBooking?retryWrites=true&w=majority&appName=Cluster0')
@@ -50,7 +51,7 @@ connectDb
 //   .catch(err => console.error('Could not connect to MongoDB', err));
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
