@@ -29,5 +29,7 @@ router.post("/create-order", async (req, res) => {
     }
 });
 
-
+app.listen(10000, () => {
+    console.log("Server is running on port 5000");
+});
 module.exports = router;

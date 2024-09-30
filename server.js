@@ -35,8 +35,9 @@ const connectDb = async () => {
       console.log(' MongoDb instance already connected ');
       return
   }
+  
 
-  await mongoose.connect(dburl);
+  await mongoose.connect('mongodb+srv://Selva:Mars%401992@selva.tvmfr.mongodb.net/HotelBooking');
   console.log(mongoose.connection.readyState, ' Connection State');
 }
 connectDb
